@@ -25,4 +25,4 @@ dependencies = []
 [[package]]
 name = "super/armoredgore"
 version = "0.1.0"
-dependencies = [["networker", "leifstout/networker@0.2.1"], ["promise", "evaera/promise@4.0.0"], ["profileservice", "firebird702/profileservice@1.1.0"]]
+dependencies = [["Networker", "leifstout/networker@0.2.1"], ["Promise", "evaera/promise@4.0.0"], ["ProfileService", "firebird702/profileservice@1.1.0"]]
