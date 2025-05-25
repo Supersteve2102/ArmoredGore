@@ -1,14 +1,18 @@
--- src/server/NetworkInit.lua
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Networker = require(ReplicatedStorage.Packages.networker)
+local Networker = require(ReplicatedStorage.Packages.Networker)
 
-local CombatNetwork = Networker.server("Combat")
+-- Access the server namespace
+local NetworkServer = Networker.server
 
+-- Create the "Combat" namespace
+local CombatNetwork = NetworkServer:createNamespace("Combat")
+
+-- Declare events within the "Combat" namespace
 CombatNetwork:declare({
-	RequestM1 = Networker.Event(),
-	AttemptParry = Networker.Event(),
-	M1Fired = Networker.Event(),
-	ParryFeedback = Networker.Event(),
+	RequestM1 = NetworkServer.Event(),
+	FireM1 = NetworkServer.Event(),
+	Parry = NetworkServer.Event(),
+	HitConfirm = NetworkServer.Event(),
 })
 
 return CombatNetwork
